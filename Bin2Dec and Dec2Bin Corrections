@@ -1,0 +1,12 @@
+Corina Chen
+APCS
+HW03: Codify the Revisions 
+2021--09--23
+
+Bin2Dec
+set the value of y to 0. for each integer (int) in the input, if the int number to the right is 1, add the value of 2^(int-1) to y. return y after the loop
+
+Dec2Bin
+If the inputted value is not 0 or 1, make an empty variable to store future values. Divide the input value by 2 and store either "1" or "0" as a string to the variable depending
+on the remainder of the divided value. Return the answer to the divided value (not the remainder) and repeat this process of dividing by 2, storing "1" or "0" depending on the 
+remainder, and returning the answer to the divided value.
