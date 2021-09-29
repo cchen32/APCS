@@ -1,0 +1,12 @@
+Corina Chen
+APCS
+HW6
+2021-09-29
+
+Similarities:
+- need input of characters or strings
+
+Differences:
+- Created a function for Netlogo
+- Scheme needed an input of characters one by one and can't handle a string of them.
+- Netlogo and Python needed "" around the strings
