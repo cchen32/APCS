@@ -10,7 +10,7 @@ public class Greet{
     System.out.println("Why, hello there, " + greet("Doo") + ". How do you do?");
   }
   public static void greet(String name){
-    System.out.println(String);
+    System.out.println(name);
   }
 }
 
