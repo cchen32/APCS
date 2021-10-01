@@ -3,25 +3,22 @@ APCS
 HW8 -- Refactor Freshie Zero
 2021-09-30*/
 
-public class Greet{
+public class Greet {
   public static void main(String[] args){
-    System.out.println("Why, hello there, " + greet("Moo") + ". How do you do?");
-    System.out.println("Why, hello there, " + greet("Foo") + ". How do you do?");
-    System.out.println("Why, hello there, " + greet("Doo") + ". How do you do?");
-  }
-  public static void greet(String name){
-    System.out.println(name);
+    greet("Foo");
+    greet("Moo");
+    greet("Doo");
+  }    
+  public static void greet (String name){
+    System.out.println("Why, hello there, " + name + ". How do you do?");
   }
 }
 
 /* 
 DISCOVERIES:
-Your program must have a main() method. If you do not have a main() method, an error will appear when running the code stating that the main() method is not found.
-It does not matter where you put main() in your program; as long as it's there, you are okay.
-When the compiler says that an identifier is expected, that means that it expected a parameter. For example, an error occurred when we wrote:
-  public static void greet(String)
- because string had to carry a parameter.
+"Identifier expected" means that there's supposed to a parameter in there somewhere. For example, if you say "String...", there needs to be a name for the String that
+you are taking in, thus "String name". 
  
 UNRESOLVED QUESTIONS:
-Since void means that the method isn't returning anything, why are we using void here when the method is returning a printed statement?
+Why do we use void? (What's the benefit of using void?)
 */
