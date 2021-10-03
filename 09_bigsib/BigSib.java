@@ -5,7 +5,9 @@
 
 public class BigSib
 {
-	public BigSib(String name){
+	public static void main(String[] args){
+	}
+	public static void greet(String name){
 		name = "Why, hello there, " + name + ". How do you do?";
 	}
 }
