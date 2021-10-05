@@ -5,6 +5,10 @@
 
 public class BigSib{
   public String setHelloMsg;
+  public String aHelloMesg(String input){
+    setHelloMsg = input;
+    return setHelloMsg;
+  }
   public static String greet(String anInput){
     return " " + anInput;
   }
