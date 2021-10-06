@@ -4,12 +4,11 @@
 //2021-10-05
 
 public class BigSib{
-  public String setHelloMsg;
-  public String aHelloMesg(String input){
+  public String helloMsg;
+  public void setHelloMesg(String input){
     setHelloMsg = input;
-    return setHelloMsg;
   }
   public static String greet(String anInput){
-    return " " + anInput;
+    return HelloMsg + " " + anInput;
   }
 }
