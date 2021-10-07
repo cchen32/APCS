@@ -1,4 +1,4 @@
-//Team Trio Config For One Day: Corina Chen, Anthony Sun, Kevin Xiao
+//Team Trio Config For One Day: Corina Chen + Binktop, Anthony Sun + Corn, Kevin Xiao + Mr.Swag
 //APCS
 //HW14: Customize Your Creation
 //2021-10-07
