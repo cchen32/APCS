@@ -4,7 +4,7 @@
 //2021-10-07
 
 //Disco
-//This is the same code from 10/6--hw13 since there's no over configuration
+//This is the same code from 10/6--hw13.
 public class BigSib{
 	public String helloMsg;
 	public BigSib(String setHelloMsg){
