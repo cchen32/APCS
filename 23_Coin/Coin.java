@@ -1,8 +1,21 @@
-/***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
- ***/
+// TNPG Tin Pig: Josiah Moltz and Corina Chen
+// APCS pd06
+// HW23 -- What Does Equality Look Like? / Pair Programming / Creating Coin.java and testing it in Driver.java
+// 2021-10-24
+// Time Spent: 0.7 hours (42 minutes)
+
+/*
+
+DISCO
+* Null can be compared (bc it worked in our code and did not return errors!)
+  (Even when it's not set to a certain value, it still ran)
+* "this.<name>" help clears up name-space errors
+
+QCC
+* Does Java always initialize variables as null?
+* Are there any other uses for "this.<name>"?
+
+*/
 
 public class Coin {
 
@@ -22,7 +35,10 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-
+    headsCtr = 0;
+    tailsCtr = 0;
+    upFace = "heads";
+    bias = 0.5;
   }
 
 
@@ -39,6 +55,10 @@ public class Coin {
   ***/
   public Coin( String s ) {
     name = s;
+    headsCtr = 0;
+    tailsCtr = 0;
+    upFace = "heads";
+    bias = 0.5;
   }
 
 
@@ -50,6 +70,10 @@ public class Coin {
   public Coin( String s, String nowFace ) {
     name = s;
     upFace = nowFace;
+    headsCtr = 0;
+    tailsCtr = 0;
+    upFace = "heads";
+    bias = 0.5;
   }
 
 
@@ -60,7 +84,7 @@ public class Coin {
   }
 
   public int getFlipCtr() {
-    return this.flipCtr;  
+    return this.flipCtr;
   }
 
   public double getValue() {
@@ -96,6 +120,9 @@ public class Coin {
     else if (s.equals("quarter")) {
         value = 0.25;
     }
+    else if (s.equals("dollar")) {
+        value = 1.00;
+    }
     else {
         System.out.println("'tis not a coin");
     }
@@ -127,11 +154,13 @@ public class Coin {
     flipCtr = flipCtr + 1;
     double flipRand = Math.random();
     if (flipRand <= bias) {
-        tailCtr = tailCtr + 1;
+        tailsCtr = tailsCtr + 1;
+        upFace = "tails";
         return "tails";
     }
     else {
-        headCtr = headCtr + 1;
+        headsCtr = headsCtr + 1;
+        upFace = "heads";
         return "heads";
     }
   }
@@ -144,7 +173,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-
+      return getUpFace().equals(other.getUpFace());
   }
 
 
@@ -154,9 +183,7 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-
+      return name + " -- " + upFace;
   }
 
 }//end class
-
-
