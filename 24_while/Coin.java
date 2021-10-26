@@ -29,7 +29,6 @@ POST-v0 MODS
   -Changed assignValue to include "half dollar"
   -Changed reset to reset flipCtr, headsCtr, and tailsCtr in addition to value and bias
   -Changed flip to show tails if the random number is >= to the bias, as opposed to <= to the bias
-  
 */
 
 public class Coin {
