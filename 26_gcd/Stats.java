@@ -132,6 +132,8 @@ public class Stats {
   }
 
   public static int gcdER( int a, int b ) {
+    a = Math.abs(a);
+    b = Math.abs(b);
     if (a > b) {
       return gcdER( a - b, b);
     }
@@ -165,13 +167,14 @@ public class Stats {
 
   //main method for testing functionality
   public static void main( String[] args ) {
-    System.out.println(gcd(2*2*3*3*3*7*97,2*3*7*7*83*97));  //Should be 4074
-    System.out.println(gcdER(2*2*3*3*3*7*97,2*3*7*7*83*97));
-    System.out.println(gcdEW(2*2*3*3*3*7*97,2*3*7*7*83*97));
+    //System.out.println(gcd(2*2*3*3*3*7*97,2*3*7*7*83*97));  //Should be 4074
+    System.out.println(gcdER(-2*2*3*3*3*7*97, -2*3*7*7*83*97));
+    //System.out.println(gcdEW(2*2*3*3*3*7*97,2*3*7*7*83*97));
 
-    System.out.println(gcd(7*43*47*101*101,23*43*47)); //Should be 2021
-    System.out.println(gcdER(7*11*43*47*101,23*43*47));
-    System.out.println(gcdEW(7*11*43*47*101,23*43*47));
+    //System.out.println(gcd(7*43*47*101*101,23*43*47)); //Should be 2021
+    System.out.println(gcdER(-7*11*43*47*101, -23*43*47));
+    //System.out.println(gcdEW(7*11*43*47*101,23*43*47));
+    System.out.println(gcdER(-2, -6));
   }
 
 }//end class
