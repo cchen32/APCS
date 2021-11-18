@@ -1,5 +1,5 @@
 /*****************************************************
- * Ameer Alnasser
+ * TNPG: Do Not Consume Arsenic: Ameer Alnasser + Corina Chen
  * APCS pd06
  * HW38 -- Shmoney
  * 2021-11-18
