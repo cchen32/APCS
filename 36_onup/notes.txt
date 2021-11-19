@@ -1,0 +1,13 @@
+compile time - syntax error; incremental development of code helpful
+ - only first error message reliable; generally error prior to location of message
+ - bisection: chop half of code until error stops
+
+Run-time error - soemthing went wrong that makes it go on and on or nothing at all (could be code error - loops, recursions)
+ - NullPointerException; StackOverflowError
+ 
+Logic errors - something to within the code; hard to find with error messages
+ - must read through code
+ - test code via components
+ 
+Scale down problem to the smallest possible case that causes error!
+Explain problem! Speak it aloud! Thank Duckies!
