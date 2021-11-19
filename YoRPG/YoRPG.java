@@ -15,9 +15,11 @@
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
  *
  * DISCO:
- *
+ * - Upon first running without moving down the comment bar, there are errors in regards to Protagonist and Monster
+ * - Upon further testing, the 4 errors that resort is in regards to Protagonist and Monster and how the symbol cannot be found.
  * QCC:
- *
+ * - Is Protagonist, Monster, InputStreamReader, and BufferedReader objects? If not, then what are they supposed to be? Is it possible
+     that they are from another class?
  **********************************************/
 
 import java.io.*;
@@ -167,7 +169,6 @@ public class YoRPG {
     //As usual, move the begin-comment bar down as you progressively
     //test each new bit of functionality...
 
-    /*================================================
     //loading...
     YoRPG game = new YoRPG();
     int encounters = 0;
@@ -178,6 +179,7 @@ public class YoRPG {
     System.out.println();
     }
     System.out.println( "Thy game doth be over." );
+    /*================================================
 	  ================================================*/
   }//end main
 
