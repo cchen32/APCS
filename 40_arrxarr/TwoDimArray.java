@@ -4,10 +4,20 @@
  * practice working with 2D arrays
  ******************************/
 
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Corina Chen
+// APCS pd6
 // HW40 -- 2D arrays
 // 2021-11-30
+
+/*
+DISCOS:
+- Adding a pair of "" allows the array to be printed out without needing any
+  other utilities.
+
+QCC:
+- How would one declare a 2D array where each row has a different number of
+  values without manually initializing the values ourselves?
+*/
 
 public class TwoDimArray
 {
@@ -15,11 +25,14 @@ public class TwoDimArray
   //          uses a FOR loop
   public static void print1( int[][] a )
   {
-    for ( int i = 0; i < a.length(); i++ ) {
-      for ( int j = 0; j < a[i].length(); j++ ) {
-        counter += j;
+    String post = "";
+    for ( int i = 0; i < a.length; i++ ) {
+      for ( int j = 0; j < a[i].length; j++ ) {
+          post += a[i][j];
       }
+      post += "\n";
     }
+    System.out.println( post );
   }
 
 
@@ -27,14 +40,27 @@ public class TwoDimArray
   //          uses a FOREACH loop
   public static void print2( int[][] a )
   {
-    // YOUR IMPLEMENTATION HERE
+    String post = "";
+    for (int[] i : a ) {
+      for (int j : i ) {
+        post += j;
+      }
+      post += "\n";
+    }
+    System.out.println( post );
   }
 
 
   //postcond: returns sum of all items in 2D int array a
   public static int sum1( int[][] a )
   {
-    // YOUR IMPLEMENTATION HERE
+    int holder = 0;
+    for ( int i = 0; i < a.length; i++ ) {
+      for (int j = 0; j < a[i].length; j++ ) {
+        holder += a[i][j];
+      }
+    }
+    return holder;
   }
 
 
@@ -42,7 +68,11 @@ public class TwoDimArray
   //          * uses helper fxn sumRow
   public static int sum2( int [][] m )
   {
-    // YOUR IMPLEMENTATION HERE
+    int holder = 0;
+    for ( int i = 0; i < m.length; i++ ) {
+      holder += sumRow( i, m );
+    }
+    return holder;
   }
 
 
@@ -50,7 +80,11 @@ public class TwoDimArray
   //          uses a FOR loop
   public static int sumRow( int r, int[][] a )
   {
-    // YOUR IMPLEMENTATION HERE
+    int holder = 0;
+    for ( int i = 0; i < a[r].length; i++ ) {
+      holder += a[r][i];
+    }
+    return holder;
   }
 
 
@@ -60,13 +94,15 @@ public class TwoDimArray
   {
     // *** YOUR IMPLEMENTATION HERE ***
     int summer = 0;
+    for ( int i : m[r] ) {
+      summer += i;
+    }
     return summer;
   }
 
 
   public static void main( String [] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       int [][] m1 = new int[4][2];
       int [][] m2 = { {2,4,6}, {3,5,7} };
       int [][] m3 = { {2}, {4,6}, {1,3,5} };
@@ -84,6 +120,7 @@ public class TwoDimArray
       System.out.println("sum m1 : " + sum2(m1));
       System.out.println("sum m2 : " + sum2(m2));
       System.out.println("sum m3 : " + sum2(m3));
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     // your own custom test cases welcomed and encouraged
