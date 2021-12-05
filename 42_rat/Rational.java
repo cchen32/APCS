@@ -1,11 +1,12 @@
 // Corina Chen
 // APCS pd6
-// HW40 -- Be Rational
-// 2021-12-1
+// HW42 -- Be More Rational
+// 2021-12-5
+// Time: 0.5 hr
 
 /*
 DISCOS
-- There wasn't a need for "this" as brought up in the piazza post.
+- According to Mr.Mykolyk, "this" is good for making sure things are told apart.
 
 QCCS
 - Something completely unrelated to the work, but why does DISCOS and QCCS turn
