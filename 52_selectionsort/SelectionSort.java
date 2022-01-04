@@ -1,5 +1,5 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// CNN: Nicole Zhou + Duck, Corina Chen + BinkTop, Nada Hameed + Ray
+// APCS pd06
 // HW52 -- implementing selection sort
 // 2022-01-05w
 // time spent:  hrs
@@ -68,11 +68,14 @@ public class SelectionSort
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
 
-    for(  ) {
+    for(int i = 0; i < data.size()-1; i++) {
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
+      int pass = data.size()-1;
 
-
-      for(  ) {
+      for(int j = i + 1; j < data.size(); j++) {
+        if (data.get(pass).compareTo(data.get(i)) < 0){
+          maxPos = j;
+        }
         System.out.println( "maxPos: " + maxPos );//diag
         System.out.println( data );//diag
 
