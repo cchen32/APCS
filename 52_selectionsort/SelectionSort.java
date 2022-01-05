@@ -8,10 +8,19 @@
  *   class SelectionSort -- implements SelectionSort algorithm
  *
  * ALGO:
+ * 0. Identify the lowest worth of all elements and then swap it with its
+ * allocated position (which is at one end of the sequence)
+ * 1. Identify the second lowest and swap with the index next to the lowest
+ * 2. Rinse and repeat until it as been traversed through (minus one, the last
+ * element is cool)
  *
  * DISCO
+ * 0. it does less work than bubblesort because it doesn't have to keep
+ * rechecking its element once it has traversed through the entire arrayList
  *
  * QCC
+ * Why is the static method for selectionSort necessary?
+ *
  * q0: How many passes to sort n elements?
  * a0: n-1 passes
  * q1: What do you know after pass p?
@@ -67,21 +76,22 @@ public class SelectionSort
 
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
-
-    for(int i = 0; i < data.size()-1; i++) {
+    for(int pass = data.size()-1; pass > 0; pass--) {
       System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-      int pass = data.size()-1;
-
-      for(int j = i + 1; j < data.size(); j++) {
-        if (data.get(pass).compareTo(data.get(i)) < 0){
+      maxPos = 0;
+      for(int j = 0; j < pass; j++) {
+        if (data.get(pass).compareTo(data.get(j)) < 0){
           maxPos = j;
         }
+
         System.out.println( "maxPos: " + maxPos );//diag
         System.out.println( data );//diag
 
-
       }
 
+      Comparable temp = data.get(pass);
+      data.set(pass, data.get(maxPos));
+      data.set(maxPos, temp);
 
       System.out.println( "after swap: " +  data );//diag
     }
@@ -110,7 +120,6 @@ public class SelectionSort
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -124,6 +133,7 @@ public class SelectionSort
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
     System.out.println( "ArrayList coco after sorting:\n" + coco );
+    /*===============for VOID methods=============
       ============================================*/
 
     /*==========for AL-returning methods==========
