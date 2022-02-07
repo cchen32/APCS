@@ -1,0 +1,26 @@
+Corina Chen
+APCS
+HW60: A Termite is-a Turtle, a Thinker is-a Turtle
+2022-02-07
+Time Spent: 0.5 hrs
+
+DISCO:
+- We are a mess :D
+- We are automatically to assume that everything is unsorted.
+
+QCC:
+- Is this form similar to binary sort?
+- Why must we divide the card into two halves and then pass it onto two other thinkers? 
+Can't we just take one and pass?
+- What would be the Big O notation of this type of sort? (log?)
+
+Thinker Firmware:
+- If cards > 1, declare unsorted. 
+- Divide deck into two (int). 
+- Hand the two new decks to two thinkers whose hands are up.
+- If thinker receives card, they should memorize the person who gave them the cards. Thus, when 
+they return their cards, they know who to return it to. (Thinker's only job is to memorize the
+person who gave them the card! And to sort the unsorted deck once the cards are returned to them.) 
+
+receives deck of card --> divide in two --> give to thinker with hand up --> get back the deck of cards
+--> sort them --> return to your giver
