@@ -1,3 +1,6 @@
+Corina Chen
+APCS
+HW 63: Read/Review/Expand
 
 DISCO:
 -
@@ -5,4 +8,7 @@ DISCO:
 QCC:
 - What are method signatures?
 
-Activities Questions: 
+Activities Questions:
+1a. method signature: name - sentimentVal; returns a double; is static
+1b. the method requires a string parameter.
+1c. it returns a double. 
