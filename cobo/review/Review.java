@@ -162,4 +162,12 @@ public class Review {
       return randomNegativeAdj();
     }
   }
+
+  public static void main(String[] args) {
+    // normal test for sentimentVal
+    System.out.println(sentimentVal("pipa"));
+    // non-String input test for sentimentVal
+    System.out.println(sentimentVal("2444"));
+  }
+
 }
