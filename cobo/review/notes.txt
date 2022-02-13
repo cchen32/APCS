@@ -13,9 +13,9 @@ Activity 1
 Q2 --
 Method Call                     || Return Value
 ===============================================================
-sentimentVal("why")               0.34
-sentimentVal("did I")             0.0
-sentimentVal("overthink")         0.0
+sentimentVal("hello");             0.75
+sentimentVal("awesome");           0.92
+sentimentVal("peers");             0.5
 
 Q3 --
 a. It will compile because there is a singular String parameter given. Also,
