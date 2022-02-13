@@ -10,28 +10,27 @@ Activity 1
 1b. the method requires a string parameter or else there will be a compilation error.
 1c. it returns a double.
 
-Q2 --
+2.
 Method Call                     || Return Value
 ===============================================================
 sentimentVal("hello");             0.75
 sentimentVal("awesome");           0.92
 sentimentVal("peers");             0.5
 
-Q3 --
-a. It will compile because there is a singular String parameter given. Also,
+
+3a. It will compile because there is a singular String parameter given. Also,
 sentimentVal() is a double, so you can set a double variable as the called
 method.
-b. It will NOT compile because it inputs a double and attempts to set a String
+3b. It will NOT compile because it inputs a double and attempts to set a String
 as the called method, creating two cases of incompatible types.
-c. It will NOT compile because it inputs two String, but sentimentVal() only
+3c. It will NOT compile because it inputs two String, but sentimentVal() only
 accepts one String argument.
 
 ==================
 Activity 2
 ==================
 
-Q1 & Q2 --
-Edited Review.java; terminal returned 4.109999999999999.
+1+2: terminal returned 4.109999999999999.
 
 ==================
 ACTIVITY 3
