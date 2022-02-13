@@ -16,6 +16,48 @@ public class Review {
 
 
   private static final String SPACE = " ";
+  
+  static{
+    try {
+      Scanner input = new Scanner(new File("cleanSentiment.csv"));
+      while(input.hasNextLine()){
+        String[] temp = input.nextLine().split(",");
+        sentiment.put(temp[0],Double.parseDouble(temp[1]));
+        //System.out.println("added "+ temp[0]+", "+temp[1]);
+      }
+      input.close();
+    }
+    catch(Exception e){
+      System.out.println("Error reading or parsing cleanSentiment.csv");
+    }
+
+
+  //read in the positive adjectives in postiveAdjectives.txt
+     try {
+      Scanner input = new Scanner(new File("positiveAdjectives.txt"));
+      while(input.hasNextLine()){
+        String temp = input.nextLine().trim();
+        System.out.println(temp);
+        posAdjectives.add(temp);
+      }
+      input.close();
+    }
+    catch(Exception e){
+      System.out.println("Error reading or parsing postitiveAdjectives.txt\n" + e);
+    }
+
+  //read in the negative adjectives in negativeAdjectives.txt
+     try {
+      Scanner input = new Scanner(new File("negativeAdjectives.txt"));
+      while(input.hasNextLine()){
+        negAdjectives.add(input.nextLine().trim());
+      }
+      input.close();
+    }
+    catch(Exception e){
+      System.out.println("Error reading or parsing negativeAdjectives.txt");
+    }
+  }
 
 
   //===== Edited for Lab =====//
