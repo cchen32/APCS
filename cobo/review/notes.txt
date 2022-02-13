@@ -1,14 +1,37 @@
-Corina Chen
-APCS
-HW 63: Read/Review/Expand
+Fang Chen
+apcs pd06
+lab 06 -- review
+2022-02-11
 
-DISCO:
--
+==================
+Activity 1
+==================
 
-QCC:
-- What are method signatures?
+Q1 --
+a. public static double sentimentVal()
+b. Yes, it requires a String. If you pass a different type of parameter, the
+file is no longer compliable and the terminal prints out "error: incompatible
+types".
+c. Yes, it returns a double.
 
-Activities Questions:
-1a. method signature: name - sentimentVal; returns a double; is static
-1b. the method requires a string parameter.
-1c. it returns a double. 
+Q2 --
+Method Call                     Return Value
+sentimentVal("why")             0.34
+sentimentVal("did I")           0.0
+sentimentVal("overthink")       0.0
+
+Q3 --
+a. It will compile because there is a singular String parameter given. Also,
+sentimentVal() is a double, so you can set a double variable as the called
+method.
+b. It will NOT compile because it inputs a double and attempts to set a String
+as the called method, creating two cases of incompatible types.
+c. It will NOT compile because it inputs two String, but sentimentVal() only
+accepts one String argument.
+
+==================
+Activity 2
+==================
+
+Q1 & Q2 --
+Edited Review.java; terminal returned 4.109999999999999.
