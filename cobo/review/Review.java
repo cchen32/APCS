@@ -258,4 +258,17 @@ public class Review {
       return randomNegativeAdj();
     }
   }
+  
+  //ACTIVITY 3:
+  public static String fakeReview(String fileName){
+    String text = textToString(fileName);
+    String newRev = "";
+    while (text.indexOf("*") > -1){
+      String b = text.substring(0,text.indexOf("*"));
+      text = text.substring(text.indexOf("*"));
+      text = text.substring(text.indexOf(" "));
+      newRev += b + randomAdjective();
+    }
+    return newRev + text;
+  }
 }
