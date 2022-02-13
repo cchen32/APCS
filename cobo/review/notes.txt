@@ -37,12 +37,10 @@ It iterates through the file, searching for spaces, and once that is found, tota
 sentimentVal. Then, everything from prior to the space would be removed, and the function will continue iterating through the rest, summing up all the
 sentimentVals. This will continue until nothing is left and the total is returne.
 
-5a. 
-a. the ratings don't really make sense because the totalSentiment value has to be really high in order to get a good star rating.
-  b. in totalSentiment, we could perhaps multiply the totalSentiment value by some factor r, like 5 or 10.
+5a. Not particularly because the setiments have to be really high in order to return a good rating.
+5b. We can multiply totalSentiment by some factor or we can check the rating against the input word count.
 
-6.
-  the logical flaw in his code is that no matter what the totalSentiment value is, if it's less than 15, be it 0 or 14, the star rating will be 4. He was working backwards in his code, so to fix it, just order the numbers in the if statements from least to greatest.
+6. he should reversed the comparison sign around because in his current code, no matter if the totalSentiment is 0 or 14, it will always return 4. 
 
 ==================
 ACTIVITY 3
