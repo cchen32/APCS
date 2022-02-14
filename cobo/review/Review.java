@@ -200,7 +200,9 @@ public class Review {
         String b = text.substring(0,text.indexOf("*"));
         text = text.substring(text.indexOf("*"));
         text = text.substring(text.indexOf(" "));
-        newRev += b + randomAdjective();
+        //newRev += b + randomAdjective();
+        //For activity 4:
+        newRev += b + randomPositiveAdj()
       }
       return newRev + text;
     }
