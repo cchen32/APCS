@@ -68,8 +68,7 @@ ACTIVITY 4
 
 1. You want to troll something you really dislike.
 2. You want to support something you fervently like. 
-3. 
-4.
-5. 
-6. 
-7. 
+3. Instead of a review that might be negative or positive, we can create a solely positive one as to avoid randomness.
+5. Removes first index.
+6. Not removing it might cause an exception where no sentimentVal is returned.
+7. Yes, if every chance of negativity is removed and only positive adjectives are used.
