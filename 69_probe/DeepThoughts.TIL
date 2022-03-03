@@ -1,0 +1,78 @@
+In a plaintext file with proper heading and a reprinting of your Knight’s Tour execution time measurements, respond to each prompt below.
+q0: From any starting position, can an open tour always be found? Explain.
+a0. No? Searching for a tour with some locations on a 5x5 results in all 0s, meaning that no tour with that starting location is possible. 
+
+q1: Same, but for closed tour.
+a1. Yes. For any closed tour, the starting point doesn't matter, and since any tour goes through all positions, 
+the start and end points cna be chosen arbitrarily. 
+
+q2: How do you explain the increase in execution time as n increases?
+a2. As the board size increases, the number of squares that need to be considered increases. For every square that is added, 
+the size of the state space increases by a factor of the number of possible moves to or from that square. Thus, the state 
+space should increase in size roughly exponentially. The time it takes to search the state space increases faster than 
+would be proportional to the size of the search space, so this algorithm is at least O(c^n)
+
+q3: Thoughts on optimization?
+a3. Some ideas: 
+- Since each corner has exactly one way in and one way out (provided it isn't the first or last square), the squares that 
+  provide that way in or out cannot be used at any other time (ie. if you visit a square one move from a corner, you MUST 
+  visit the corner)
+- For even numbered boards >= 8, consider solving the case of: 
+
+  A B C D | M I E A
+  E F G H | N J F B
+  I J K L | O K G C
+  M N O P | P L H D
+  - - - -   - - - - 
+  D H L P | P O N M
+  C G K O | L K J I
+  B F J N | H G F E
+  A E I M | D C B A
+
+  where squares with the same letter are treated as the same. Find an open path of 16 moves (17 squares) going through each letter, 
+  where the start and end are a knight's move away. Then, string together 4 of these paths. 
+  (We know that this will work because we saw such a path online for 8x8, and we know that in 
+
+State your cleanest algo for finding your way out of a maze (of the “2D” style discussed in class).
+
+
+Go forth and mark your path. Can you go forward, left, or right again?
+  If not, back up until you can go forward, left, or right on an unmarked path. 
+  If yes, keep going. 
+Repeat this until you're at the end
+
+
+Medium Maze: (+ is equal to #)
+++++++++++++++++++++++++++++++++++++++++
++   +            ++++++   +            +
++++  +     +              +            +
+  +  +     +      ++++++++++++++++++++ +
+  +  +     +      +    +  +          + +
+  +  +     +      +    +  +          + +
+  +  +     +      +    +  +          + +
++++  ++++++++++++++++  +  +        + + +
++                   $+++++++++++   + +++++++
++++  ++++++++++++++++  +  +    +   +       +
+  +  +                 +  +    + + +       +
+  +  +                 +  +        +       + 
+  +  +++++++++++++++++++  +        +       +
+  +                       +        +       + 
+  +  +++++++++++++++++++           +       +
+  +  +                             +       +
+  +  +                             +       +
+  ++++++++++++++++++++++++++++++++++   + 
+
+
+Hard maze: 
+
+           #          ###########
+##############        #         #
+        #    #    #######       #
+        ######    #     #       #
+     ####    #    #   ###    ####
+             #          #    #
+             ############    ###
+                               #
+                               #
+                               #
+                               #
