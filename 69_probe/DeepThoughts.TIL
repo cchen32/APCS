@@ -1,4 +1,17 @@
-In a plaintext file with proper heading and a reprinting of your Knight’s Tour execution time measurements, respond to each prompt below.
+Nora Miller, Jacob Ng, Corina Chen
+APCS
+HW69 -- Knights tour reflection
+2022-03-02
+time spent: 1.5
+
+Jinx's execution times: 
+n=5   10.320s    across 5 executions
+n=6   286.11s    across 1 executions
+n=7   26.535s    across 3 executions
+
+Bufferfinger's execution time:
+n=5   175s    across 3 executions
+
 q0: From any starting position, can an open tour always be found? Explain.
 a0. No, or at least not for all n. Searching for a tour with some locations on a 5x5 results in all 0s, meaning that no tour with that starting 
 location were possible. 
@@ -42,8 +55,7 @@ Go forth and mark your path. Can you go forward, left, or right again?
   If yes, keep going. 
 Repeat this until you're at the end
 
-
-Medium Maze: (+ is equal to #)
+Medium (?) Maze: (The + is equal to #, aka walls):
 ++++++++++++++++++++++++++++++++++++++++
 +   +            ++++++   +            +
 +++  +     +              +            +
@@ -63,8 +75,6 @@ Medium Maze: (+ is equal to #)
   +  +                             +       +
   ++++++++++++++++++++++++++++++++++   + 
 
-
-Hard maze: 
 
 Hard maze: 
 
