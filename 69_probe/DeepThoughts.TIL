@@ -1,6 +1,7 @@
 In a plaintext file with proper heading and a reprinting of your Knight’s Tour execution time measurements, respond to each prompt below.
 q0: From any starting position, can an open tour always be found? Explain.
-a0. No? Searching for a tour with some locations on a 5x5 results in all 0s, meaning that no tour with that starting location is possible. 
+a0. No, or at least not for all n. Searching for a tour with some locations on a 5x5 results in all 0s, meaning that no tour with that starting 
+location were possible. 
 
 q1: Same, but for closed tour.
 a1. Yes. For any closed tour, the starting point doesn't matter, and since any tour goes through all positions, 
@@ -65,14 +66,20 @@ Medium Maze: (+ is equal to #)
 
 Hard maze: 
 
+Hard maze: 
+
            #          ###########
-##############        #         #
+$#############        #         #
         #    #    #######       #
         ######    #     #       #
      ####    #    #   ###    ####
              #          #    #
-             ############    ###
-                               #
-                               #
-                               #
-                               #
+      ###################    ###
+      #                        #
+      #############    #       #
+                       #       #
+    #############################
+          #                #
+          #  ###############
+          #  #              
+          $
