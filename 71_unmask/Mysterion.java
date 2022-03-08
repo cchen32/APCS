@@ -2,7 +2,7 @@
 // APCS pd06
 // HW71 -- Reading for intent, tracing for VICTORY
 // 2022-03-07m
-// time spent:  hrs
+// time spent:  1 hr
 
 /***
  * SKEELTON for
@@ -31,14 +31,21 @@
  *     swap arr[b], arr[s]
  *
  * DISCO
+ * - Our "hypotheses" works only when c is equal to or less than 2.
+ * - The order of the elements to either side of c does not matter in regards to
+ * order.
+ * - This pattern only keeps up until c is greater than 2.
  *
  * QCC
+ * - If our hypotheses is correct, why doesn't it work when c is greater than 2?
  *
  * q0: What does it do?
- * a0:
+ * a0: create a partition at "c" where every value to the left of "c" is less than
+ *"c" and every value to the right of "c" is greater than "c"
  *
  * q1: O(?)
- * a1:
+ * a1: O(n) because we are running through one for-loop, hence the outcome will be
+ * linear to the input.
  *
  ***/
 
@@ -101,15 +108,15 @@ public class Mysterion
   public static int[] mysterion( int[] arr, int a, int b, int c)
   {
     int v = arr[c];
-    swap(arr[c], arr[b], arr);
+    swap(c, b, arr);
     int s = a;
     for (int i = a; i < b-1; i++) {
       if (arr[i] < v) {
-        swap(arr[s], arr[i], arr);
+        swap(s, i, arr);
         s+=1;
       }
     }
-    swap(arr[b], arr[s], arr);
+    swap(b, s, arr);
     return arr;
   } //end mysterion
 
@@ -125,14 +132,13 @@ public class Mysterion
     // run mysterion on each array,
     // holding a & b fixed, varying c...
     for( int testC = 0; testC < 5; testC++ ) {
+    System.out.println("\nC is " + testC);
     System.out.println("arr1: ");
     printArr(arr1);
     mysterion(arr1,0,4,testC);
     System.out.println("after mysterion w/ a=0,b=4,c="
     + testC +"...");
     printArr(arr1);
-    }
-    /*
     System.out.println("-----------------------");
     System.out.println("arr3:");
     printArr(arr3);
@@ -156,7 +162,6 @@ public class Mysterion
     printArr(arr5);
     System.out.println("-----------------------");
     }
-    */
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main
