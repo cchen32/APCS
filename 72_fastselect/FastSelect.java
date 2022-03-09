@@ -88,27 +88,40 @@ public class FastSelect {
   }//end PARTITIONER
   //--------------^  PARTITIONER  ^--------------
 
-  public static int fastSelect(int[] arr, int y)
+  public static int fastSelecter(int[] arr, int low, int high, int piv, int y)
   { // need to include a helper function probably
-    // int piv = (int) (0.5 * arr.length);
-    // int low = 0;
-    // int high = arr.length-1;
-    // partitioner(arr, low, high, piv);
-    // if (piv == y) {
-    //   return arr[piv];
-    // }
-    // else if (y == 0) {
-    //   return arr[0];
-    // }
-    // else if (y == arr.length-1) {
-    //   return arr[arr.length-1];
-    // }
-    // else {
-    //   if (piv > y) {
-    //     piv = (int)((piv + lower)/2);
-    //     return fastSelect()
-    //   }
-    // }
+    //int piv = arr.length / 2;
+    partitioner(arr, low, high, piv);
+    if (piv == y) {
+       return arr[piv];
+     }
+    else if (y == 0) {
+       return arr[0];
+     }
+    else if (y == arr.length-1) {
+       return arr[arr.length-1];
+     }
+    else {
+      if ( piv > y ) {
+        int newP = (piv + high) / 2;
+        return fastSelecter(arr, low, high, newP, y);
+      }
+      else if ( piv < y) {
+        int newP = (piv + low) / 2;
+        return fastSelecter (arr, low, high, newP, y);
+      }
+    }
+  }
+
+  public static int fastSelect(int[] arr, int y) {
+    int piv = arr.length / 2;
+    int low = 0;
+    int high = arr.length-1;
+    return fastSelecter (arr, low, high, piv, y);
+  }
+
+  public static void main (String[] args) {
+    //need to do some testing yikes;
   }
 
 }
