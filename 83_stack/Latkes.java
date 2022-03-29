@@ -1,3 +1,9 @@
+// Tin Pig: Ryan Lau, Jing Yi Feng, Corina Chen
+// APCS pd06
+// HW 83: Stacks on Stacks
+// 2022-03-29t
+// time spent: 0.7hrs
+
 /***
  * class Latkes
  * v1
@@ -7,7 +13,10 @@
 
 /***
     DISCO
+    - Expanding the array is necessary so borrowed from ArrayList functions
+
     QCC
+    - Is there any other necessary functions?
  **/
 
 
@@ -24,25 +33,38 @@ public class Latkes
     _stack = new String[initCapacity];
   }// O(1)
 
+  //helper for expanding array
+  private void expand()
+  {
+    String[] temp = new String[ _stack.length * 2 ];
+    for( int i = 0; i < _stack.length; i++ )
+      temp[i] = _stack[i];
+    _stack = temp;
+  }
+
 
   //means of insertion
   public void push( String s )
   {
+    if ( isFull() ) {
+      expand();
+    }
     _stack[_stackSize] = s;
     _stackSize += 1;
-  }// O(?)
+  }// O(1)
 
 
   //means of removal
   public String pop( )
   {
-    /* your
-       SIMPLE
-       SMART
-       magicks
-       here
-    */
-  }// O(?)
+    if ( isEmpty() ) {
+      return "Empty stack";
+    }
+    String temp = _stack[_stackSize - 1];
+    _stack[_stackSize - 1] = null;
+    _stackSize -= 1;
+    return temp;
+  }// O(1)
 
 
   //chk for emptiness
@@ -62,7 +84,6 @@ public class Latkes
   //main method for testing
   public static void main( String[] args )
   {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
     Latkes tastyStack = new Latkes(10);
     tastyStack.push("aoo");
     tastyStack.push("boo");
@@ -102,6 +123,7 @@ public class Latkes
     System.out.println( tastyStack.pop() );
     //stack empty by now; SOP(null)
     System.out.println( tastyStack.pop() );
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main()
