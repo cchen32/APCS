@@ -58,7 +58,7 @@ public class Latkes
   public String pop( )
   {
     if ( isEmpty() ) {
-      return "Empty stack";
+      return null;
     }
     String temp = _stack[_stackSize - 1];
     _stack[_stackSize - 1] = null;
