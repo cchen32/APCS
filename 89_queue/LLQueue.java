@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class LLQueue implements Queue<QUASAR> {
+public class LLQueue<QUASAR> implements Queue {
 
   LinkedList<QUASAR> _queue;
 
@@ -10,6 +10,10 @@ public class LLQueue implements Queue<QUASAR> {
 
   public QUASAR dequeue() {
     return _queue.removeFirst();
+  }
+
+  public boolean isEmpty() {
+    return _queue.isEmpty();
   }
 
 }
