@@ -1,3 +1,18 @@
+// Tin Pig: Ryan Lau, Jing Yi Feng, Corina Chen
+// APCS pd06
+// HW 89: Queue Two Ways
+// 2022-04-11
+// time spent: 0.5hrs
+
+/*
+DISCO:
+0. It takes less work to write when it's a wrapper class of LinkedList and
+ArrayList because it inherits many of the already written methods.
+
+QCC:
+0. Who invented the word 'queue'? Why is it so hard to spell?
+*/
+
 /***
  * interface Queue
  * Includes only methods listed in AP subset of Java
