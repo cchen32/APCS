@@ -1,0 +1,9 @@
+Team NDA: Corina Chen, Nicole Zhou, Jing Yi Feng
+APCS Pd06
+HW 101: Heap o' Trouble
+2022-05-16
+Time Spent: 0.5 hrs
+
+QCC:
+- What do we do if there is a number less than or equal to the root?
+- Again, what are the uses for heap?
