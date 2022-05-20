@@ -8,6 +8,7 @@
 */
 
 /* QCCs
+0. how to check if pos is a leaf position? -- Line 140
 */
 
 /**
@@ -40,21 +41,21 @@ public class Heapsort
 
     //STEP 2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = a.length - 1; i > 0 ; i--) {
+    for( int lastLeaf = a.length - 1; lastLeaf > 0 ; lastLeaf--) {
       //set aside root val
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
-      swap(i, 0, data);
+      swap(a.length - 1, 0, data);
       //walk now-out-of-place root node down the tree...
-      int pos = i;
+      int pos = lastLeaf;
       int minChildPos;
       int maxChildPos;
 
-      while(  ) {
+      while(lastLeaf > 0) {
 
         //choose child w/ max value, or check for child
-        maxChildPos(pos, i, data);
+        maxChildPos(, , data);
         //if no children, then i've walked far enough
         if ( maxChildPos == -1 )
           break;
@@ -136,7 +137,7 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if (pos == null || pos != 0)
+    if (pos < 0 || pos > a.lenghth - 1) // how to check if pos is a leaf position?
       retVal = -1;
     //if no right child, then left child is only option for min
     else if (rc == null)
