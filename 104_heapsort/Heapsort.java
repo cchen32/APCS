@@ -40,21 +40,21 @@ public class Heapsort
 
     //STEP 2: repeatedly pull from heap until empty
     //(Sorted region will grow from R to L)
-    for( int lastLeaf = ; ;  ) {
+    for( int lastLeaf = a.length - 1; i > 0 ; i--) {
       //set aside root val
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
-
+      swap(i, 0, data);
       //walk now-out-of-place root node down the tree...
-      int pos =
+      int pos = i;
       int minChildPos;
       int maxChildPos;
 
       while(  ) {
 
         //choose child w/ max value, or check for child
-
+        maxChildPos(pos, i, data);
         //if no children, then i've walked far enough
         if ( maxChildPos == -1 )
           break;
@@ -87,27 +87,44 @@ public class Heapsort
       int addValPos =  i; //val to add is next non-heap element
 
       //now must percolate up
-      while(  ) { //potentially swap until reach root
+      while( i > -1 ) { //potentially swap until reach root
 
         //pinpoint parent
         int parentPos = (addValPos - 1) / 2;
 
-        if (  ) {
-          swap(  );
+        if ( a[addValPos] < a[parentPos] ) {
+          swap( addValPos, parentPos, a );
           addValPos = parentPos;
         }
         else
           break;
       }
     }
-  }//end minHeapify() -- O(?)
+  }//end minHeapify() -- O(n)
 
 
 
   private void maxHeapify( int[] a )
   {
+    for (int i = 1; i < a.length; i++) {
+      //add a[i] as leaf
+      int addValPos =  i; //val to add is next non-heap element
 
-  }//end maxHeapify() -- O(?)
+      //now must percolate up
+      while( i > -1 ) { //potentially swap until reach root
+
+        //pinpoint parent
+        int parentPos = (addValPos - 1) / 2;
+
+        if ( a[addValPos] > a[parentPos] ) {
+          swap( addValPos, parentPos, a );
+          addValPos = parentPos;
+        }
+        else
+          break;
+      }
+    }
+  }//end maxHeapify() -- O(n)
 
 
 
@@ -119,13 +136,13 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if (  )
+    if (pos == null || pos != 0)
       retVal = -1;
     //if no right child, then left child is only option for min
-    else if (  )
+    else if (rc == null)
       retVal = lc;
     //have 2 children, so compare to find least
-    else if (  )
+    else if (a[lc] < a[rc])
       retVal = lc;
     else
 
@@ -137,6 +154,22 @@ public class Heapsort
   //return position of child with greatest value in input array
   private int maxChildPos( int pos, int last, int[] a )
   {
+    int retVal;
+    int lc = 2*pos + 1; //index of left child
+    int rc = 2*pos + 2; //index of right child
+
+    //pos is not in the heap or pos is a leaf position
+    if (pos == null || pos != 0)
+      retVal = -1;
+    //if no right child, then left child is only option for max
+    else if (rc == null)
+      retVal = lc;
+    //have 2 children, so compare to find most
+    else if (a[lc] > a[rc])
+      retVal = lc;
+    else
+
+    return retVal;
   }
 
 
